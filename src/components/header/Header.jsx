@@ -62,19 +62,22 @@ function Header({page,logo, text,card}) {
           </div>
         ))
           }</div>
-      </div>
 
-      <div className="flex grid grid-cols-4">{texts.map(item => (
+          <div className="flex grid grid-cols-4 gap-[20px]">{texts.map(item => (
         <div className="w-[212px] p-[8px] h-[192px] rounded-[8px] bg-[#fff]" key={item.id}>
-          <img src={item.images} alt="iamge" />
-          <h3></h3>
+          <img className="w-[100%] h-[124px] rounded-[8px]" src={item.image} alt="iamge" />
+          <h3>{item.name}</h3>
 
-          <div className="">
-
+          <div className="flex items-center justify-between">
+            <p>{item.rating}</p>
+            <span>{item.reviewCount} items</span>
           </div>
         </div>
       ))
         }</div>
+      </div>
+
+      
     </div>
   )
 }
