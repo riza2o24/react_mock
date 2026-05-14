@@ -1,9 +1,17 @@
-import { useState } from "react"
+import axios from "axios"
+import { useEffect, useState } from "react"
 import { CiSearch } from "react-icons/ci"
 import { RiArrowLeftDoubleLine, RiArrowRightDoubleLine } from "react-icons/ri"
 
 function Header({page,logo, text,card}) {
     const [open,setOpen] = useState(false)
+
+    const [texts,setTexts] = useState([])
+
+    useEffect(() => {
+      axios.get("https://dummyjson.com/recipes")
+      .then(res => setTexts(res.data.recipes))
+    }, [])
   return (
     <div className="flex justify-between w-[1440px] m-auto bg-[#F6F5F5]">
       {/* header */}
@@ -56,9 +64,17 @@ function Header({page,logo, text,card}) {
           }</div>
       </div>
 
-      <div>
-          <h1></h1>
-      </div>
+      <div className="flex grid grid-cols-4">{texts.map(item => (
+        <div className="w-[212px] p-[8px] h-[192px] rounded-[8px] bg-[#fff]" key={item.id}>
+          <img src={item.images} alt="iamge" />
+          <h3></h3>
+
+          <div className="">
+
+          </div>
+        </div>
+      ))
+        }</div>
     </div>
   )
 }
