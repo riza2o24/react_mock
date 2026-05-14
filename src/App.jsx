@@ -39,31 +39,31 @@ const card=[
     text: "Burger"
   },
   {
-    icon: "🍔",
-    text: "Burger"
+    icon: "🍕",
+    text: "Pizza"
   },
   {
-    icon: "🍔",
-    text: "Burger"
+    icon: "🍟",
+    text: "French fries"
   },
   {
-    icon: "🍔",
-    text: "Burger"
+    icon: "🧃",
+    text: "Soda"
   },
   {
-    icon: "🍔",
-    text: "Burger"
+    icon: "🥤",
+    text: "Juice"
   },
   {
-    icon: "",
-    text: "Burger"
-  },
+    icon: "🍗",
+    text: "Chicken"
+  }
 ]
 
 function App() {
   return (
     <div>
-      <Header logo={logo} text={text} page={page}/>
+      <Header logo={logo} text={text} page={page} card={card}/>
     </div>
   )
 }
