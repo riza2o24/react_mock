@@ -13,9 +13,9 @@ function Header({page,logo, text,card}) {
       .then(res => setTexts(res.data.recipes))
     }, [])
   return (
-    <div className="flex justify-between w-[1440px] m-auto bg-[#F6F5F5]">
+    <div className="flex justify-between w-[1440px] h-auto m-auto bg-[#F6F5F5]">
       {/* header */}
-      <div className={`${open ? "w-[220px] h-[900px] pt-[40px] px-[20px] bg-[#fff] shadov"  : "w-[120px] h-[900px]  pt-[40px] px-[20px] bg-[#fff] shadov"}`}>
+      <div className={`${open ? "w-[220px] h-auto pt-[40px] px-[20px] bg-[#fff] shadov"  : "w-[120px] h-auto pt-[40px] px-[20px] bg-[#fff] shadov"}`}>
         <div className={`${open ?"flex items-center gap-[20px]" : "flex items-center justify-center"}`}>
             <img src={logo} alt="logo" />
 
@@ -63,10 +63,11 @@ function Header({page,logo, text,card}) {
         ))
           }</div>
 
-          <div className="flex grid grid-cols-4 gap-[20px]">{texts.map(item => (
-        <div className="w-[212px] p-[8px] h-[192px] rounded-[8px] bg-[#fff]" key={item.id}>
+          {/* cards */}
+          <div className="flex grid grid-cols-4 gap-[20px] ">{texts.slice(0,20).map(item => (
+        <div className="w-[212px] p-[8px] h-[192px] rounded-[8px] shadov bg-[#fff]" key={item.id}>
           <img className="w-[100%] h-[124px] rounded-[8px]" src={item.image} alt="iamge" />
-          <h3>{item.name}</h3>
+          <h3 className="font-[600]">{item.name.slice(0,18)}</h3>
 
           <div className="flex items-center justify-between">
             <p>{item.rating}</p>
