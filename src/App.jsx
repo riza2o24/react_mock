@@ -33,6 +33,33 @@ const page =[
   }
 ]
 
+const card=[
+  {
+    icon: "🍔",
+    text: "Burger"
+  },
+  {
+    icon: "🍔",
+    text: "Burger"
+  },
+  {
+    icon: "🍔",
+    text: "Burger"
+  },
+  {
+    icon: "🍔",
+    text: "Burger"
+  },
+  {
+    icon: "🍔",
+    text: "Burger"
+  },
+  {
+    icon: "",
+    text: "Burger"
+  },
+]
+
 function App() {
   return (
     <div>
