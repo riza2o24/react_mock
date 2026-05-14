@@ -23,9 +23,13 @@ function Header({page,logo, text}) {
 
         <div>
             <ul>{page.map(item => (
-                <li className="flex items-center mt-[50px] gap-[20px]">
-                    <img className={`${open ? "block" : "flex m-auto"}`} src={item.img} alt="img" />
-                    <p className={`${open ? "block" : "hidden"}`}>{item.title}</p>
+                <li className="flex items-center mt-[35px] gap-[20px] justify-center">
+                    <div className={`${open ? "w-[180px] h-[50px] hoverss border-2 flex items-center justify-center gap-[10px] rounded-[16px] border-[#d8d8d8]" : "block"}`}>
+                      <div  className={`${open ? "block "  : " hovers m-auto flex w-[50px] h-[50px] items-center justify-center"}`}>
+                        <img src={item.img} alt="img" />
+                      </div>
+                      <p className={`${open ? "block text-[#028170] font-[600]" : "hidden"}`}>{item.title}</p>
+                    </div>
                 </li>
 
             ))
