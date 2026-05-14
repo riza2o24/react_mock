@@ -2,12 +2,12 @@ import { useState } from "react"
 import { CiSearch } from "react-icons/ci"
 import { RiArrowLeftDoubleLine, RiArrowRightDoubleLine } from "react-icons/ri"
 
-function Header({page,logo, text}) {
+function Header({page,logo, text,card}) {
     const [open,setOpen] = useState(false)
   return (
-    <div className="flex justify-between w-[1440px] m-auto">
+    <div className="flex justify-between w-[1440px] m-auto bg-[#F6F5F5]">
       {/* header */}
-      <div className={`${open ? "w-[220px] h-[900px] pt-[40px] px-[20px] shadov"  : "w-[120px] h-[900px]  pt-[40px] px-[20px] shadov"}`}>
+      <div className={`${open ? "w-[220px] h-[900px] pt-[40px] px-[20px] bg-[#fff] shadov"  : "w-[120px] h-[900px]  pt-[40px] px-[20px] bg-[#fff] shadov"}`}>
         <div className={`${open ?"flex items-center gap-[20px]" : "flex items-center justify-center"}`}>
             <img src={logo} alt="logo" />
 
@@ -41,11 +41,23 @@ function Header({page,logo, text}) {
 
 
       {/* 2 */}
-      <div>
-        <div className="w-[900px] h-[60px] mt-[40px] rounded-[12px] flex items-center gap-[20px] p-[18px] shadov">
+      <div className="w-[900px] ">
+        <div className="w-[100%] h-[60px] mt-[40px] rounded-[12px] bg-[#fff] flex items-center gap-[20px] p-[18px] shadov">
           <CiSearch className="text-[25px] text-[#7e7e7e]"/>
           <input type="text" className="w-[600px] outline-none"  placeholder="Search menu" />
         </div>
+
+        <div className="mt-[50px] mb-[50px] flex items-center justify-between">{card.map(item => (
+          <div className="flex items-center gap-[8px] w-auto rounded-[8px] border-3 border-[#F6F5F5] bg-[#fff] text_hover px-[16px] py-[18px]  h-[60px]">
+            <h4>{item.icon}</h4>
+            <p className="font-[600] text-[20px]">{item.text}</p>
+          </div>
+        ))
+          }</div>
+      </div>
+
+      <div>
+          <h1></h1>
       </div>
     </div>
   )
